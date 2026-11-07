@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoGlow Pro - AI Video Enhancer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VideoGlow <span>Pro</span></h1>
+            <p>Remini-Style AI Video Sharpness, HDR & Cinematic Glow</p>
+        </header>
+
+        <div class="upload-section">
+            <label for="videoInput" class="upload-btn">📁 Choose a Video</label>
+            <input type="file" id="videoInput" accept="video/*" hidden>
+            <span id="fileName" class="file-name">No file chosen</span>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-wrap">
+                <video id="sourceVideo" controls playsinline style="display: none;"></video>
+                <div id="emptyPreview" class="empty-preview">
+                    <p>🎬 Your enhanced video preview will appear here</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h3>✨ AI Enhancement Filters</h3>
+            <div class="filter-buttons">
+                <button class="filter active" data-filter="original">Original HD</button>
+                <button class="filter" data-filter="natural">Remini Sharp</button>
+                <button class="filter" data-filter="cinematic">Cinematic HDR</button>
+                <button class="filter" data-filter="vivid">4K Vivid Glow</button>
+                <button class="filter" data-filter="vintage">Vintage</button>
+                <button class="filter" data-filter="mono">B&W Elite</button>
+            </div>
+
+            <div class="sliders-grid">
+                <div class="slider-group">
+                    <label>Brightness: <span id="brightnessValue">100%</span></label>
+                    <input type="range" id="brightness" min="50" max="150" value="100">
+                </div>
+                <div class="slider-group">
+                    <label>Contrast: <span id="contrastValue">100%</span></label>
+                    <input type="range" id="contrast" min="50" max="180" value="100">
+                </div>
+                <div class="slider-group">
+                    <label>Saturation: <span id="saturationValue">100%</span></label>
+                    <input type="range" id="saturation" min="0" max="200" value="100">
+                </div>
+            </div>
+        </div>
+
+        <div class="action-section">
+            <button id="exportBtn" class="export-btn disabled" disabled>⚡ Export Enhanced Video</button>
+            <div id="status" class="status-msg"></div>
+            <a id="downloadLink" class="download-btn hidden" download="videoglow-enhanced.webm">📥 Download Enhanced Video</a>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+  
+</html>
